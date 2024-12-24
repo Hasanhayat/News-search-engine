@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import axios from "axios";
-import { Card } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
-import newsCard from "./components/news-card";
+import NewsCard from "./components/news-card";
 
 function App() {
   const [news, setNews] = useState([]);
@@ -76,7 +75,6 @@ function App() {
             <option value="PK">Pakistan</option>
             <option value="IN">India</option>
             <option value="US">USA</option>
-            <option value="UK">United Kingdom</option>
             <option value="AU">Australia</option>
             <option value="CA">Canada</option>
             <option value="FR">France</option>
@@ -101,23 +99,20 @@ function App() {
                   <h3>{e.title}</h3>
                 </Carousel.Caption>
               </Carousel.Item>
-
-              // <Card key={i} style={{ width: "18rem" }}>
-              //   <Card.Img variant="top" src={e?.image_url} />
-              //   <Card.Body>
-              //     <Card.Title>{e?.title}</Card.Title>
-              //     <Card.Text>{e?.description}</Card.Text>
-              //   </Card.Body>
-              //   <Card.Body>
-              //     <Card.Link href={e?.source_url}>{e?.source_name}</Card.Link>
-              //   </Card.Body>
-              // </Card>
             );
           })}
         </Carousel>
       </div>
-
-      <newsCard />
+      {news.map((e, i) => {
+        return (
+          <NewsCard
+            heading={e.source_name}
+            img={e.image_url}
+            icon={e.source_icon}
+            details={e.title}
+          />
+        );
+      })}
     </div>
   );
 }

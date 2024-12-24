@@ -14,7 +14,6 @@ body {
 .container > h1 {
   font-weight: 600;
   text-decoration: underline;
-  
 }
 .card {
   height: 100vh;
@@ -26,11 +25,4 @@ body {
 .card img {
   height: 100vh;
   border-radius: 5px;
-}
-
-
-.news{
-    height: 10px;
-    width: 100px;
-    background-color: black;
 }

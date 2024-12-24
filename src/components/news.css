@@ -1,0 +1,38 @@
+.news {
+  margin: 20px 0;
+  border-radius: 5px;
+  height: 30vh;
+  width: 100%;
+  background-color: #cec9c9d7;
+  display: flex;
+  gap: 15px;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.news > img {
+  height: 100%;
+  width: 20%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.news-body {
+  display: flex;
+  flex-direction: column;
+}
+.news-up {
+  display: flex;
+  gap: 5px;
+  margin: 5px;
+}
+.news-up img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+.news-up h2 {
+  font-weight: 600;
+}
+.news-down {
+  margin: 5px;
+  overflow: hidden;
+}
