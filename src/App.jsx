@@ -3,11 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import axios from "axios";
 import { Card } from "react-bootstrap";
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
+import hassan from "./assets/hassan.jpeg"
 
 function App() {
   const [news, setNews] = useState([]);
-  const [topic, setTopic] = useState("Corruption");
+  const [topic, setTopic] = useState("Sport");
   const [country, setCountry] = useState("PK");
   const getNews = async (topic, country) => {
     const apiKey = "pub_621857ca538510408306905e52b9f0b9f73ae";
@@ -23,6 +24,7 @@ function App() {
         },
       });
       setNews(respone.data.results);
+      console.log(respone.data.results);
     } catch (error) {
       console.error("Error fetching the news:", error);
     }
@@ -34,6 +36,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1>News Search Engine</h1>
       <label htmlFor="topic">
         Topic:
         <select
@@ -43,8 +46,8 @@ function App() {
             setTopic(e.target.value);
           }}
         >
-          <option value="Corruption">Corruption</option>
           <option value="Sport">Sport</option>
+          <option value="Corruption">Corruption</option>
           <option value="Education">Education</option>
           <option value="Technology">Technology</option>
           <option value="Politics">Politics</option>
@@ -69,17 +72,14 @@ function App() {
         </select>
       </label>
 
-      <div className="d-flex flex-column align-items-center gap-3">
+      <div className="card">
         <Carousel>
           {news.map((e, i) => {
             return (
-              <Carousel.Item key={i} interval={1000}>
-                <img src={e?.img_url} alt="" />
+              <Carousel.Item key={i} interval={2000}>
+                <img src={e?.image_url} alt={e.title} className="d-block w-100" />
                 <Carousel.Caption>
-                  <h3>{e?.title}</h3>
-                  <p>
-                    {e?.description}
-                  </p>
+                  <h3>{e.title}</h3>
                 </Carousel.Caption>
               </Carousel.Item>
 

@@ -1,11 +1,27 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-color: gray;
-    font-family: 'Courier New', Courier, monospace;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(97, 97, 97);
+  font-family: "Courier New", Courier, monospace;
 }
-.container{
-    margin: 5vh auto;
-background-color: rgba(102, 95, 95, 0.767);
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.container {
+  margin: 5vh auto;
+  padding: 15px;
+  background-color: rgba(138, 130, 130, 0.767);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+.container > h1 {
+  font-weight: 600;
+  text-decoration: underline;
+}
+.card {
+  height: 100vh;
+}
+.card h3 {
+  color: black;
+  font-weight: 900;
+}
+.card img {
+  height: 100vh;
 }
